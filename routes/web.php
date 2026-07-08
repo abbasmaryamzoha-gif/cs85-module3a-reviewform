@@ -10,7 +10,7 @@ Route::get('/', function () {
 <ul>
   <li><a href="/module2a/price_engine">module2a</a></li>
   <li><a href="/module2a/price_engine_refactored">module2a pt 2</a></li>
-  <li><a href="/module3/module3a">module3a</a></li>
+  <li><a href="/module3/contactform">module3a</a></li>
 </ul>
     ';
 });
@@ -24,8 +24,8 @@ Route::get('/test1', function () {
 
 
 
-Route::get('/module3/module3a', function () {
-    return view('module3.module3a');
+Route::get('/module3/contactform', function () {
+    return view('module3.contactform');
 });
 
 Route::get('/module2a/price_engine', function () {

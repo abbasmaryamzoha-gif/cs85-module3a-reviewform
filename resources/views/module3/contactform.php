@@ -1,18 +1,24 @@
 <?php
 
 function validateInput($data, $fieldName) {
+    //$errorCount: gets added to if either validateEmail or validateInput recieves blank data
     global $errorCount;
-
+    //$data: user input to be validated,  $fieldName: used for error message
+    
     if (empty($data)) {
         echo "\"{$fieldName}\" is a required field.<br />\n";
         ++$errorCount;
         $retval = "";
+    //prompts user to enter a value
     } else {        // Only clean up the input if it isn't empty
         $retval = trim($data);
         $retval = stripslashes($retval);
+
+    //remove unwanted spaces, backslashes 
     }
 
     return($retval);
+    //returns processed input (or blank if blank)
 }
 
 function validateEmail($data, $fieldName) {
@@ -23,8 +29,9 @@ function validateEmail($data, $fieldName) {
         ++$errorCount;
         $retval = "";
     } else {
+//removes invalid characters for email
         $retval = filter_var($data, FILTER_SANITIZE_EMAIL);
-
+//checks if processed input is a valid email
         if (!filter_var($retval, FILTER_VALIDATE_EMAIL)) {
             echo "\"{$fieldName}\" is not a valid e-mail address.<br />\n";
         }
@@ -35,6 +42,7 @@ function validateEmail($data, $fieldName) {
 
 function displayForm($Sender, $Email, $Subject, $Message) {
 ?>
+// creates 4 fields
 <h2 style="text-align:center">Contact Me</h2>
 
 <form name="Contact" action="ContactForm.php" method="post">
@@ -104,3 +112,9 @@ if ($ShowForm == TRUE) {
 }
 
 ?>
+
+/*
+validateEmail and validateInput are similar,
+so it might be more efficient to combine them as one function.
+function could check if $fieldName is email, then apply separate validation rule
+*/
