@@ -42,7 +42,7 @@ function validateEmail($data, $fieldName) {
 
 function displayForm($Sender, $Email, $Subject, $Message) {
 ?>
-// creates 4 fields
+// displays fields
 <h2 style="text-align:center">Contact Me</h2>
 
 <form name="Contact" action="ContactForm.php" method="post">

@@ -11,6 +11,7 @@ Route::get('/', function () {
   <li><a href="/module2a/price_engine">module2a</a></li>
   <li><a href="/module2a/price_engine_refactored">module2a pt 2</a></li>
   <li><a href="/module3/contactform">module3a</a></li>
+   <li><a href="/module3/module3b-createform">module3b</a></li>
 </ul>
     ';
 });
@@ -28,6 +29,7 @@ Route::get('/module3/contactform', function () {
     return view('module3.contactform');
 });
 
+
 Route::get('/module2a/price_engine', function () {
     return view('module2a.price_engine');
 });
@@ -39,6 +41,10 @@ Route::get('/module2a/price_engine_refactored', function () {
 
 Route::get('/module2b/cosmic_calendar', function () {
     return view('module2b.cosmic_calendar');
+});
+
+Route::get('/module3/module3b-createform', function () {
+    return view('module3.module3b-createform');
 });
 
 ?>
