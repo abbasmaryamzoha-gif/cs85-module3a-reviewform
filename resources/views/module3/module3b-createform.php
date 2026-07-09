@@ -36,7 +36,7 @@ function validateEmail($data) {
 //check for word count in message:
 function validateMessage($data) {
     $count = str_word_count($data);
-    if ($count<4 or $count>150) {
+    if ($count<50 or $count>150) {
         $retval = "";
         return "<strong> Message must be between 4 and 150 words.</strong><br />\n";
         
